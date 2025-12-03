@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* Futuristic Dark Gradient Background */
+.futuristic-bg {
+  background: linear-gradient(135deg, #0a0f24, #131b3a, #1a204b);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating Glow Elements */
+.futuristic-bg::before,
+.futuristic-bg::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  filter: blur(120px);
+  opacity: 0.35;
+  animation: float 12s infinite ease-in-out alternate;
+}
+
+.futuristic-bg::before {
+  top: -100px;
+  left: -80px;
+  background: #4c1d95;  /* Purple */
+}
+
+.futuristic-bg::after {
+  bottom: -100px;
+  right: -80px;
+  background: #1e3a8a;  /* Blue */
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(60px, -60px); }
+}
+
+/* Neon Glow Card */
+.neon-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4),
+              0 0 15px rgba(0, 150, 255, 0.4);
+  transition: 0.3s ease;
+}
+
+.neon-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(0, 150, 255, 0.6),
+              0 0 40px rgba(100, 0, 255, 0.5);
+}
+
+@keyframes pulse-slow {
+  0% { opacity: 1; }
+  50% { opacity: 0.9; }
+  100% { opacity: 1; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 6s infinite ease-in-out;
+}
+
